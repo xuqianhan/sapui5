@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+
+<script src="resources/sap-ui-core.js" id="sap-ui-bootstrap"
+	data-sap-ui-libs="sap.m,sap.ui.layout"
+	data-sap-ui-theme="sap_bluecrystal">
+	
+</script>
+<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+
+<script>
+	function display() {
+		var oButton = new sap.m.Button({
+			text : "Click me."
+		});
+
+		oButton.attachPress(function() {
+			jQuery.sap.require("sap.m.MessageBox");
+			sap.m.MessageBox.confirm("Hello SAPUI5!", {
+				title : "SAPUI5 button test"
+			});
+		});
+
+		oButton.placeAt("content");
+	}
+
+	sap.ui.getCore().attachInit(display);
+</script>
+
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+</html>
